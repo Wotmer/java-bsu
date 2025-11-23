@@ -1,0 +1,99 @@
+# --- Compiled class files ---
+*.class
+
+# --- Log files (важно для твоего Logger) ---
+*.log
+logs/
+
+# --- BlueJ files ---
+*.ctxt
+
+# --- Mobile Tools for Java (J2ME) ---
+.mtj.tmp/
+
+# --- Package Files ---
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# --- Virtual Machine Crash Logs ---
+hs_err_pid*
+
+# =========================
+# Build Systems
+# =========================
+
+# --- Maven ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber
+
+# --- Gradle ---
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# =========================
+# IDE Specifics
+# =========================
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# --- Eclipse ---
+.classpath
+.project
+.settings/
+bin/
+
+# --- Visual Studio Code ---
+.vscode/
+*.code-workspace
+
+# --- NetBeans ---
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# =========================
+# OS Specifics
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# Project Specifics (Твоё задание)
+# =========================
+
+# Если используешь H2 базу данных в файловом режиме (JDBC)
+*.mv.db
+*.trace.db
+*.h2.db
+
+# Если решил хранить данные в CSV и не хочешь их комитить (опционально)
+# *.csv
+
+# Файлы с секретами (пароли от БД и т.д.), если будешь их использовать
+secrets.properties
+.env
