@@ -9,3 +9,11 @@ CREATE TABLE IF NOT EXISTS accounts (
                                         balance DECIMAL(20, 2),
     is_frozen BOOLEAN
     );
+CREATE TABLE IF NOT EXISTS transactions (
+                                            id UUID PRIMARY KEY,
+                                            account_id UUID,
+                                            amount DECIMAL(20, 2),
+    type VARCHAR(50),
+    timestamp TIMESTAMP,
+    description VARCHAR(500)
+    );

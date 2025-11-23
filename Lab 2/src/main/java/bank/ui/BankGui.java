@@ -126,7 +126,6 @@ public class BankGui extends JFrame implements TransactionObserver {
         depositBtn.addActionListener(e -> submitTransaction(TransactionType.DEPOSIT));
         withdrawBtn.addActionListener(e -> submitTransaction(TransactionType.WITHDRAW));
         transferBtn.addActionListener(e -> submitTransaction(TransactionType.TRANSFER));
-        transferBtn.addActionListener(e -> submitTransaction(TransactionType.TRANSFER));
 
         clearBtn.addActionListener(e -> {
             sourceIdField.setText("");
@@ -160,6 +159,11 @@ public class BankGui extends JFrame implements TransactionObserver {
                 return;
             }
             BigDecimal amount = new BigDecimal(amtText);
+
+            if (type != TransactionType.FREEZE && amount.compareTo(BigDecimal.ZERO) <= 0) {
+                JOptionPane.showMessageDialog(this, "Amount must be positive!", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
             UUID targetId = null;
             if (type == TransactionType.TRANSFER) {
