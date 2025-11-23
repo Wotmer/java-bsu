@@ -173,6 +173,14 @@ public class BankGui extends JFrame implements TransactionObserver {
                     return;
                 }
                 targetId = UUID.fromString(trgText);
+
+                if (sourceId.equals(targetId)) {
+                    JOptionPane.showMessageDialog(this,
+                            "Cannot transfer money to the same account!",
+                            "Validation Error",
+                            JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
             }
 
             Transaction tx = new Transaction(type, amount, sourceId, targetId);
