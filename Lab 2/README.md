@@ -6,8 +6,7 @@
 ![push](push_push.png)
 </summary>
 
-![hi](evolution.png)
-![hi](dota_pudge.jpg)
+![invoker](dota_pudge.jpg)
 </details>
 
 ## Теоретическая часть
