@@ -73,27 +73,27 @@
 
 ```mermaid
 graph TD
-    subgraph ClientSide [Сторона Клиента]
+    subgraph ClientSide ["Сторона Клиента"]
         User((Пользователь))
     end
 
-    subgraph DockerHost [Docker Compose Infrastructure]
+    subgraph DockerHost ["Docker Compose Infrastructure"]
         direction TB
 
-        subgraph FrontContainer [Frontend Service (Nginx)]
-            MainPage[index.html<br/>Port: 80]
-            SpyPage[spy.html<br/>Port: 81]
-            Assets[Images & CSS]
+        subgraph FrontContainer ["Frontend Service (Nginx)"]
+            MainPage["index.html<br/>Port: 80"]
+            SpyPage["spy.html<br/>Port: 81"]
+            Assets["Images & CSS"]
         end
 
-        subgraph BackContainer [Backend Service (Spring Boot)]
-            Controller[ClickController<br/>REST API]
-            ServiceLayer[Logic: Click/Reset]
-            CorsConfig[CORS Security]
+        subgraph BackContainer ["Backend Service (Spring Boot)"]
+            Controller["ClickController<br/>REST API"]
+            ServiceLayer["Logic: Click/Reset"]
+            CorsConfig["CORS Security"]
         end
 
-        subgraph DBContainer [Database Service (PostgreSQL)]
-            DB[(Database<br/>Table: time_click)]
+        subgraph DBContainer ["Database Service (PostgreSQL)"]
+            DB[("Database<br/>Table: time_click")]
         end
     end
 
