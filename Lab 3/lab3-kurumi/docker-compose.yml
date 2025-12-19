@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: kurumi_db
+    environment:
+      POSTGRES_DB: time_db
+      POSTGRES_USER: kurumi
+      POSTGRES_PASSWORD: datealive
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    container_name: kurumi_backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/time_db
+      SPRING_DATASOURCE_USERNAME: kurumi
+      SPRING_DATASOURCE_PASSWORD: datealive
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: kurumi_frontend
+    ports:
+      - "80:80"
+      - "81:81"
+    depends_on:
+      - backend
